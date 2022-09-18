@@ -14,7 +14,7 @@ export default function Home() {
     useEffect(()=>{
       setTimeout(() => {
         setSpiner(false)
-      }, 5000);
+      }, 1000);
     })
   return (
     <View>

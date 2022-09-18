@@ -2,7 +2,10 @@
   package="com.vk">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <!-- for scan fingerprint for android-->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <!-- end -->
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"

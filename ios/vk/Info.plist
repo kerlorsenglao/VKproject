@@ -6,6 +6,10 @@
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>vk</string>
+	<!-- for scan fingerprint for ios -->
+	<key>NSFaceIDUsageDescription</key>
+	<string>ADD_WHY_YOU_NEED_FACEID_PERMISSION</string>
+	<!-- end -->
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
