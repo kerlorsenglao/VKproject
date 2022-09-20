@@ -4,7 +4,7 @@ import React, { createContext, useState } from 'react'
 const GlobalData = createContext();
 
 const GlobalContextProvider=({children})=> {
-    const [token,setToken] = useState(null);
+    const [token,setToken] = useState("123456789");
     const [userInfo,setUserInfo] = useState({});
 
     const LoginByPassword = ( )=>{
@@ -29,8 +29,8 @@ const GlobalContextProvider=({children})=> {
     return (
         <GlobalData.Provider
             value={{
-                token,
-                userInfo,
+                token,setToken,
+                userInfo,setUserInfo,
                 LoginByPassword,
                 LoginByTouchID,
                 Logout,

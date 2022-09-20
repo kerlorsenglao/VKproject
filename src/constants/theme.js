@@ -1,12 +1,17 @@
 export const COLORS = {
-    primary: "#3333cc",//#001F2D //#00b3b3
-    secondary: "powderblue",//#4D626C
+    header_bg:"hsl(210, 20%, 10%)",
+    primary: "hsl(210, 20%, 15%)",
+    secondary: "hsl(210, 20%, 25%)",
     white: "#FFF",
     gray: "#74858C",
-    gray_ligth: '#ebebe0',
+    gray_ligth: '#8c8c8c',
     warning: '#ff3300',
-    green: '#33cc33',
-    black: '#000000'
+    green:'#00b386',
+    black: '#000000',
+    yellow_dark:"#665200",
+    yellow_ligth:'#e6e600',
+    yellow:'#cccc00',
+    red:'#ff6666'
   };
   
   export const SIZES = {
