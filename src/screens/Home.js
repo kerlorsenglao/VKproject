@@ -13,6 +13,7 @@ import { COLORS } from '../constants'
 import LogoComponent from '../components/LogoComponent'
 import ProfileIconComponent from '../components/ProfileIconComponent'
 import SearchComponent from '../components/SearchComponent'
+import LoadingComponent from '../components/LoadingComponent'
 
 export default function Home() {
     const {token} = useContext(GlobalData)
@@ -25,11 +26,13 @@ export default function Home() {
     })
     return (
         <SafeAreaView>
+            
             <StatusBar
             // hidden
             // translucent={true}
             backgroundColor={COLORS.header_bg}
             />
+            <LoadingComponent/>
             <View>
 
             </View>
