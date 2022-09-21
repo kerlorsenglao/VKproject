@@ -1,4 +1,4 @@
-import { SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 
@@ -12,6 +12,7 @@ import { GlobalData } from '../context/GlobalContext'
 import { COLORS } from '../constants'
 import LogoComponent from '../components/LogoComponent'
 import ProfileIconComponent from '../components/ProfileIconComponent'
+import SearchComponent from '../components/SearchComponent'
 
 export default function Home() {
     const {token} = useContext(GlobalData)
@@ -22,17 +23,20 @@ export default function Home() {
         setSpiner(false)
       }, 1000);
     })
-  return (
-    <SafeAreaView>
-      <View>
-        <StatusBar
-          // hidden
-          // translucent={true}
-          backgroundColor={COLORS.header_bg}
-        />
-        {/* <ProfileIconComponent/> */}
-      </View>
-    </SafeAreaView>
+    return (
+        <SafeAreaView>
+            <StatusBar
+            // hidden
+            // translucent={true}
+            backgroundColor={COLORS.header_bg}
+            />
+            <View>
+
+            </View>
+            <ScrollView>
+                <SearchComponent/>
+            </ScrollView>
+        </SafeAreaView>
     // <View style={styles.constainer}>
     //   <StatusBar
     //     // hidden
