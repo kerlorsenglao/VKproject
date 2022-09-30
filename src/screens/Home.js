@@ -14,6 +14,8 @@ import LogoComponent from '../components/LogoComponent'
 import ProfileIconComponent from '../components/ProfileIconComponent'
 import SearchComponent from '../components/SearchComponent'
 import LoadingComponent from '../components/LoadingComponent'
+import Carousel from '../components/Carousel'
+import CarouselComponent from '../components/CarouselComponent'
 
 export default function Home() {
     const {token} = useContext(GlobalData)
@@ -32,12 +34,14 @@ export default function Home() {
             // translucent={true}
             backgroundColor={COLORS.header_bg}
             />
-            <LoadingComponent/>
+            {/* <LoadingComponent visible={true}/> */}
             <View>
 
             </View>
             <ScrollView>
-                <SearchComponent/>
+                {/* <SearchComponent/> */}
+                {/* <Carousel/> */}
+                <CarouselComponent/>
             </ScrollView>
         </SafeAreaView>
     // <View style={styles.constainer}>
