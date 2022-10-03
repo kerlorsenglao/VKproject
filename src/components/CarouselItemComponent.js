@@ -35,7 +35,9 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 3,
         elevation: 5,
-        borderRadius:15
+        borderRadius:15,
+        marginTop:5
+        // backgroundColor: COLORS.gray_ligth
     },
     textView:{
         position:'absolute',
@@ -44,10 +46,12 @@ const styles = StyleSheet.create({
         left: 5,
     },
     image:{
-        width: width,
+        width: '95%',
         height: height/6,
         resizeMode:'stretch',
-        // borderRadius:5
+        alignSelf: 'center',
+        borderRadius:5,
+        
     },
     itemTitle:{
         color: COLORS.yellow,

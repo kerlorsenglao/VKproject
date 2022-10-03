@@ -1,6 +1,7 @@
-import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View, Dimensions } from 'react-native'
+import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
+import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions'
 
 import * as Animatable from 'react-native-animatable'
 import Config from 'react-native-config'
@@ -16,14 +17,17 @@ import SearchComponent from '../components/SearchComponent'
 import LoadingComponent from '../components/LoadingComponent'
 import CarouselComponent from '../components/CarouselComponent'
 import LineComponent from '../components/LineComponent'
+import ButtonIconComponent from '../components/ButtonIconComponent'
+import ListMenuIconComponent from '../components/ListMenuIconComponent'
+import ContentComponent from '../components/ContentComponent'
 
-// let MAX_WIDTH = Dimensions.get('screen').width;
-// let MAX_HIEGTH= Dimensions.get('screen').height;
+
 
 export default function Home() {
-    let MAX_WIDTH = Dimensions.get('screen').width;
-    let MAX_HIEGTH= Dimensions.get('screen').height;
-    
+    const window = useWindowDimensions();
+    let MAX_WIDTH = window.width;
+    let MAX_HIEGTH= window.height;
+
     const {token} = useContext(GlobalData)
     const navigation = useNavigation()
     const [spiner, setSpiner] = useState(true)
@@ -41,9 +45,11 @@ export default function Home() {
             <LineComponent/>
             <ScrollView>
                 {
-                  MAX_HIEGTH >MAX_WIDTH ? <CarouselComponent/> : null
+                  MAX_HIEGTH > MAX_WIDTH ? <CarouselComponent/> : null
                 }
                 <SearchComponent/>
+                <ContentComponent/>
+                {/* <ButtonIconComponent name='ios-restaurant'/> */}
             </ScrollView>
         </SafeAreaView>
     // <View style={styles.constainer}>

@@ -46,7 +46,7 @@ export default function SearchComponent() {
                 }
             </TouchableOpacity>
         </View>
-        <Text style={{color:COLORS.white}}>{textshow}</Text>
+        {/* <Text style={{color:COLORS.white}}>{textshow}</Text> */}
         </>
     )
 }
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     input_container:{
         flexDirection:'row',
         marginTop: 10,
+        marginBottom: 10,
         backgroundColor: COLORS.secondary,
         borderRadius: 15,
         alignItems:'center',

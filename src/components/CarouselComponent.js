@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View, Dimensions, Animated, Button, Image } from 'react-native'
+import { StyleSheet, Text, View, Dimensions, Animated,TouchableOpacity } from 'react-native'
 import React, { useRef, useState, useEffect } from 'react'
-// import * as Animatable from 'react-native-animatable'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
 import image1 from '../assets/images/img1.jpg' 
 import image2 from '../assets/images/img2.jpg' 
@@ -10,6 +10,7 @@ import image4 from '../assets/images/img4.jpg'
 import CarouselItemComponent from './CarouselItemComponent'
 import { COLORS } from '../constants'
 import useInterval from './Interval'
+
 
 const MAX_WIDTH = Dimensions.get('screen').width;
 
@@ -31,35 +32,39 @@ export default function CarouselComponent() {
     const animation = useRef(new Animated.Value(0))
     const [currImage, setCurrImage] = useState(0)
 
-    useInterval(()=>handleAnimation(),4000)
+    useInterval(()=>handleAnimation(),5000)
 
     const handleAnimation = ()=>{
         let newCurrImg = currImage + 1;
         if(newCurrImg >= data.length){
             newCurrImg = 0;
         }
-        console.log('current Image=>',newCurrImg)
         Animated.spring(animation.current, {toValue: -(MAX_WIDTH * newCurrImg), useNativeDriver: true}).start()
         setCurrImage(newCurrImg)
     }
 
     return (
-        <>
-       
-            <View>
-                <Animated.View style={[styles.container,{transform:[{translateX: animation.current}]}]}>
-                    {
-                        data.map((img,index)=>(<CarouselItemComponent image={img} key={index}/>))
-                    }
-                </Animated.View>
-                <View style={styles.indicatorContainer}>
-                    {
-                        data.map((img,index)=><View key={index} style={[styles.indicator, index === currImage ? styles.activeIndicator: undefined]}></View>)
-                    }
-                </View>
+        <View>
+            <Animated.View style={[styles.container,{transform:[{translateX: animation.current}]}]}>
+                {
+                    data.map((img,index)=>(<CarouselItemComponent image={img} key={index}/>))
+                }
+            </Animated.View>
+            <View style={styles.indicatorContainer}>
+                {
+                    data.map((img,index)=><View key={index} style={[styles.indicator, index === currImage ? styles.activeIndicator: undefined]}></View>)
+                }
             </View>
-            {/* <Button title='move' onPress={handleAnimation}/> */}
-            </>
+            <TouchableOpacity
+                style={styles.nextButton}
+                onPress={handleAnimation}
+            >
+                <Ionicons
+                    name='md-chevron-forward-outline'
+                    size={40}
+                />
+            </TouchableOpacity>
+        </View>
     )
 }
 
@@ -86,6 +91,13 @@ const styles = StyleSheet.create({
     },
     activeIndicator:{
         backgroundColor: COLORS.white
+    },
+    nextButton:{
+        position:'absolute',
+        right: 5,
+        bottom: MAX_WIDTH/8,
+        alignSelf:'center',
+        justifyContent:'flex-end'
     }
     
 })
