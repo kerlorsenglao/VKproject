@@ -1,4 +1,4 @@
-import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View, Dimensions } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 
@@ -14,34 +14,36 @@ import LogoComponent from '../components/LogoComponent'
 import ProfileIconComponent from '../components/ProfileIconComponent'
 import SearchComponent from '../components/SearchComponent'
 import LoadingComponent from '../components/LoadingComponent'
-import Carousel from '../components/Carousel'
 import CarouselComponent from '../components/CarouselComponent'
+import LineComponent from '../components/LineComponent'
+
+// let MAX_WIDTH = Dimensions.get('screen').width;
+// let MAX_HIEGTH= Dimensions.get('screen').height;
 
 export default function Home() {
+    let MAX_WIDTH = Dimensions.get('screen').width;
+    let MAX_HIEGTH= Dimensions.get('screen').height;
+    
     const {token} = useContext(GlobalData)
     const navigation = useNavigation()
     const [spiner, setSpiner] = useState(true)
     useEffect(()=>{
-      setTimeout(() => {
-        setSpiner(false)
-      }, 1000);
-    })
+      
+    },[MAX_HIEGTH,MAX_WIDTH])
     return (
         <SafeAreaView>
-            
             <StatusBar
             // hidden
             // translucent={true}
             backgroundColor={COLORS.header_bg}
             />
             {/* <LoadingComponent visible={true}/> */}
-            <View>
-
-            </View>
+            <LineComponent/>
             <ScrollView>
-                {/* <SearchComponent/> */}
-                {/* <Carousel/> */}
-                <CarouselComponent/>
+                {
+                  MAX_HIEGTH >MAX_WIDTH ? <CarouselComponent/> : null
+                }
+                <SearchComponent/>
             </ScrollView>
         </SafeAreaView>
     // <View style={styles.constainer}>
