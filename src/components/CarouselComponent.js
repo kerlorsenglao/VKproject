@@ -44,7 +44,11 @@ export default function CarouselComponent() {
     }
 
     return (
-        <View>
+        <View
+            style={{
+               elevation:4
+            }}
+        >
             <Animated.View style={[styles.container,{transform:[{translateX: animation.current}]}]}>
                 {
                     data.map((img,index)=>(<CarouselItemComponent image={img} key={index}/>))

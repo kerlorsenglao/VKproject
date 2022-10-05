@@ -9,6 +9,7 @@ import Detail from '../screens/Detail';
 import LogoComponent from '../components/LogoComponent';
 import ProfileIconComponent from '../components/ProfileIconComponent';
 import Login from '../screens/Login';
+import MemberScreen from '../screens/members/MemberScreen';
 import { GlobalData } from '../context/GlobalContext';
 import { COLORS } from '../constants';
 
@@ -42,6 +43,11 @@ export default function index() {
                   headerStyle:{backgroundColor: COLORS.header_bg},
                   headerTitle:(props)=><LogoComponent {...props}/>,
                   headerRight:()=><ProfileIconComponent/>,
+                }}
+              />
+              <Stack.Screen name='Member' component={MemberScreen}
+                options={{
+                  headerShown:true
                 }}
               />
               <Stack.Screen name="Detail" component={Detail}/>

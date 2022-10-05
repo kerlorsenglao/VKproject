@@ -54,9 +54,9 @@ export default function SearchComponent() {
 const styles = StyleSheet.create({
     input_container:{
         flexDirection:'row',
-        marginTop: 10,
-        marginBottom: 10,
-        backgroundColor: COLORS.secondary,
+        marginTop: 8,
+        marginBottom: 8,
+        backgroundColor: COLORS.primary,
         borderRadius: 15,
         alignItems:'center',
         marginHorizontal: 10,

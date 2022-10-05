@@ -1,7 +1,7 @@
 export const COLORS = {
     header_bg:"hsl(210, 20%, 10%)",
-    primary: "hsl(210, 20%, 15%)",
-    secondary: "hsl(210, 20%, 25%)",
+    primary: "hsl(210, 20%, 25%)",
+    secondary:  "hsl(210, 20%, 15%)",
     white: "#FFF",
     gray: "#74858C",
     gray_ligth: '#8c8c8c',
