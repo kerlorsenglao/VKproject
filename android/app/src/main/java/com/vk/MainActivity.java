@@ -1,4 +1,4 @@
-package com.vk;
+package com.vken;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;

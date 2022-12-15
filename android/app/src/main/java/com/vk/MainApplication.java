@@ -1,4 +1,4 @@
-package com.vk;
+package com.vken;
 
 import android.app.Application;
 import android.content.Context;
