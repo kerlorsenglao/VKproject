@@ -11,7 +11,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "vk";
+    return "vken";
   }
   @Override
   protected void onCreate(Bundle savedInstanceState) {
